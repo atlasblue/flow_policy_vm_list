@@ -64,6 +64,7 @@ $getvm = Invoke-RestMethod -Method Post -Uri $UriVM -Headers $Header -Body $json
 ForEach ($entity in $getvm.entities) 
 {
     $cat = $entity.metadata.categories;
+    $secpolicy = ""
     if ($cat -match "AppType")
     {
       $cat -match "AppType=(?<content>.*)}"
